@@ -1,0 +1,5 @@
+motrix KEYWORD1
+motorPower KEYWORD2
+motorSteer KEYWORD2
+motorTank KEYWORD2
+debug KEYWORD2
