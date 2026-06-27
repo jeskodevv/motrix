@@ -2,7 +2,7 @@
 
 # *MOTRIX* — matrix, but motors
 
-<img width="2560" height="920" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/motrix-banner.jpg" />
+<img width="2560" height="920" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/motrix_banner.jpg" />
 
 Motrix is a microcontroller expansion board and motor driver built for beginner robotics. I've designed it for the Hack Club [Stasis](https://stasis.hackclub.com) program! [+ [Stardance](https://stardance.hackclub.com) from v2]. Designed specifically for car type of projects like line following, obstacle avoiding, remote control, robofootball, and robosumo. The goal is just **plug in and code**, no breadboards and no chaotic wires.
 
