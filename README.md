@@ -1,6 +1,6 @@
-![Hardware Licence](https://img.shields.io/badge/hardware-CERN--OHL--S--v2-blue) ![Software Licence](https://img.shields.io/badge/software-MIT-green) ![Arduino](https://img.shields.io/badge/Arduino-Nano-teal) ![Status](https://img.shields.io/badge/status-Active%20Development-yellow) ![HackClub](https://img.shields.io/badge/supported%20by-HackClub-red)
+![Hardware Licence](https://img.shields.io/badge/Hardware%20Licence-CERN--OHL--S--v2-blue) ![Software Licence](https://img.shields.io/badge/Software%20Licence-MIT-green) ![Arduino](https://img.shields.io/badge/MCU-Arduino%20Nano-teal) ![Status](https://img.shields.io/badge/status-Active%20Development-yellow) ![HackClub](https://img.shields.io/badge/supported%20by-HackClub-red)
 
-# MOTRIX — matrix, but motors
+# *MOTRIX* — matrix, but motors
 
 <img width="2560" height="920" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/motrix-banner.jpg" />
 
@@ -39,10 +39,10 @@ For details about the design process or other information, check out the [develo
 **Motrix Nano V2** is a 2-layer PCB designed around the Arduino Nano.
 
 here's the pcb
-<img width="410" height="409" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/pcb-v2.jpg" />
+<img width="410" height="409" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/pcb-v2.png" />
 
 and here's the schematic
-<img width="805" height="503" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/schem-v2.jpg" />
+<img width="805" height="503" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/schem-v2.png" />
 
 
 ### Power Specs
