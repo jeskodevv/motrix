@@ -1,52 +1,86 @@
-![License](https://img.shields.io/badge/license-CERN--OHL--S--NC--1.2-blue) ![Arduino](https://img.shields.io/badge/Arduino-Compatible-green) ![Status](https://img.shields.io/badge/status-Active%20Development-yellow)
+![Hardware Licence](https://img.shields.io/badge/hardware-CERN--OHL--S--v2-blue) ![Software Licence](https://img.shields.io/badge/software-MIT-green) ![Arduino](https://img.shields.io/badge/Arduino-Nano-teal) ![Status](https://img.shields.io/badge/status-Active%20Development-yellow) ![HackClub](https://img.shields.io/badge/supported%20by-HackClub-red)
 
-# *MOTRIX* - matrix, but motors
+# MOTRIX — matrix, but motors
 
-<img width="119" height="141" alt="image" src="https://github.com/user-attachments/assets/95bc1b64-4798-4447-a8af-002ef7424d90" />     a microcontroller based expansion board and motor driver for beginner robotics freaks. The board is especially created for making car projects _(e.g. line following, obstacle avoiding, remote control, ...)_ easier and even just _"plug-in and code"_. It integrates motor control, comprehensive sensor interfaces, and intelligent power management into a single, beginner-friendly package.
+<img width="2560" height="920" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/motrix-banner.jpg" />
 
-_The reason that I started working on this project is that 1.5 years before I was interested in making arduino projects, and somehow I landed on a BT car project. That was too bulky with messy jumper wires, and coding was chaotic. That day I wished that if only just plug-in and go options were aviable. Yeah, they were aviable, e.g. Keyestudio, but too expensive for me, and coding them were pretty same. So when I heard about [Stasis](stasis.hackclub.com) the first idea that landed on my brain was Motrix._
+Motrix is a microcontroller expansion board and motor driver built for beginner robotics. I've designed it for the Hack Club [Stasis](https://stasis.hackclub.com) program! [+ [Stardance](https://stardance.hackclub.com) from v2]. Designed specifically for car type of projects like line following, obstacle avoiding, remote control, robofootball, and robosumo. The goal is just **plug in and code**, no breadboards and no chaotic wires.
 
-## _THE PROBLEMS IT SOLVES_
-- **WIRING CHAOS**
-- **SOFTWARE & CONTROL LIMITATIONS**
+This is the first hardware project I've ever worked on. Version 1 got unfinished because of final exams and some personal stuff. V2 is now here, it has more polished structure and good vibes!!
 
-## _FEATURES_
-- Dual DC motor control using _TB6612FNG_
-- Interfaces for common robotics sensors (IR, ultrasonic, line sensors)
-- Optimized for Arduino Nano (ESP32 support planned on next versions)
-- Beginner-friendly design with minimal configuration needed
-- Arduino Library with plenty amount of QOL coding functions
+For details about the design process or other information, check out the [development journal](https://stasis.hackclub.com/dashboard/discover/cmnlk2lji00hk01qlbceh9il3). A local copy is available in [JOURNAL.md](https://github.com/jeskodevv/motrix/blob/main/JOURNAL.md).
 
 
-## _Hardware Overview_
-Motrix Nano is 47.35x58.8mm 2 layer PCB which is designed to work primarily with Arduino Nano (_Future versions may support ESP32_). The TB6612FNG motor driver IC provides reliable control for dual DC motors. Ready-to-plug pins for other components.
-
-Here's the 3D view of MOTRIX NANO V1 (DEMO):
-
-<img width="439" height="445" alt="1775848664943-njcwxu" src="https://github.com/user-attachments/assets/221ef321-6c20-4812-a460-b8d9bd713170" /><img width="431" height="441" alt="1775848681231-5i2871" src="https://github.com/user-attachments/assets/e4698138-1660-4c23-bbb0-07b5229c5272" />
-
-...PCB's design:
-
-<img width="388" height="441" alt="image" src="https://github.com/user-attachments/assets/aef5e037-4afd-461f-bcea-99390f9f2b09" />
-
-Bill of Materials are aviable in [BOM.csv](https://github.com/jeskodevv/motrix/blob/main/BOM.csv)
+> when i was like 13 i tried building a BT car. It was bulky, wires everywhere, and the code was spagetthi. I wished there were a plug-in and go options. The ones that existed (Keyestudio, etc.) were too expensive and had the same coding problems. When I knew about [Stasis](https://stasis.hackclub.com) the first idea that came to mind was Motrix.
 
 
-## _Software Overview_
-Comprehensive Arduino library and example sketches coming soon. Current development focuses on establishing a stable hardware foundation.
+## WHAT IT SOLVES
+
+- **Wiring chaos:** no need to explain this
+- **Software complexity:** Arduino library handles motors, sensors, bluetooth and more so beginners focus on logic, not setup
+- **Power management:** onboard buck converter handles 6–20V input, delivers clean 5V to logic and sensors automatically. but our little TB6612FNG can't handle that much, so the ceiling is 13V, otherwise we might fire it.
+- its compactt!!!
+
+## WHAT IT HAS (aka FEATURES)
+
+- Arduino library include such handful QoL features like advanced motor control, emergenccy stop, and including integration with common libraries.
+- Onboard MP1584EN buck converter (6–12V input → 5V logic)
+- Power switch
+- Optimized for beginner robotics and competition robots
+- Dual DC motor control via TB6612FNG module (PWM speed control, direction, emergency stop)
+- 3x ultrasonic sensor headers share 1 TRIG line for being efficient with pins, and i think its also perfect for sumo robots
+- Bluetooth header with AT mode button
+- Pin headers dedicated for line sensor, 2x servos, 3x ultrasonic sensors, 3x universal (analog & digital) pins, and bluetooth module.
+- AT MODE button for Bluethooth module which makes it possible to enter "admin" mode with just pressing that button while switching the power switch.
 
 
-### _LINKS_
-- [WIKI (everything is detailed there)](https://github.com/jeskodevv/motrix/wiki)
-- [Development Journals](https://stasis.hackclub.com/dashboard/discover/cmnlk2lji00hk01qlbceh9il3)
-- [PCB Gerber Files](https://github.com/jeskodevv/motrix/blob/main/src/PCB/NANOv1_DEMO.zip)
-- Arduino Library (WIP)
-- [Example Codes](https://github.com/jeskodevv/motrix/blob/main/src/examples)
+## HARDWARE OVERVIEW
+
+**Motrix Nano V2** is a 2-layer PCB designed around the Arduino Nano.
+
+here's the pcb
+<img width="410" height="409" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/pcb-v2.jpg" />
+
+and here's the schematic
+<img width="805" height="503" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/schem-v2.jpg" />
 
 
-## _LICENCE_
-This project is licenced under CERN Open Hardware License Version 2 - Strongly Reciprocal - Non Commercial (**CERN-OHL-S-NC-1.2**).
+### Power Specs
 
-You are free to use the design, modify it, and share this work for **non-commercial purposes only**.
+Maximum input Motrix can support is 13.5V because its ceiling for TB6612FNG, but i wrote 6-12V in some case. 
+btw MP1584EN handles up to 20V and turns it into 5V. exceed 12V limit on your own risk!
 
-You must give appropriate credit to the original author and distribute contributions **under the same licence**.
+> **Warning:** 4S Li-ion fully charged = 16.8V, which exceeds TB6612FNG maximum and probably fires it. I personally recommended using only 3S if you are using Li-ion 18650s cuz its 12.6V maximum. 4S is incompatible.
+
+### BOM
+Bill of Materials available in [BOM.csv](https://github.com/jeskodevv/motrix/blob/main/BOM.csv) too.
+
+
+## SOFTWARE OVERVIEW
+
+The Motrix Arduino library provides clean, beginner-friendly functions for all onboard hardware and more.
+
+Library and example sketches will be available in the [src/](https://github.com/jeskodevv/motrix/tree/main/src) folder.
+
+> currently library is wip so leaving this section blank, i'll document it after finishing.
+
+## LINKS
+
+- [Wiki [WIP]](https://github.com/jeskodevv/motrix/wiki)
+- [Development Journal](https://stasis.hackclub.com/dashboard/discover/cmnlk2lji00hk01qlbceh9il3)
+- [PCB Gerber Files](https://github.com/jeskodevv/motrix/blob/main/src/PCB/)
+- [Arduino Library](https://github.com/jeskodevv/motrix/releases/tag/library)
+- [Example Sketches [WIP]](https://github.com/jeskodevv/motrix/tree/main/src/examples)
+- [BOM](https://github.com/jeskodevv/motrix/blob/main/BOM.csv)
+
+
+## LICENSE
+
+Hardware (PCB, schematics, Gerber files) is licensed under **CERN-OHL-S v2**.
+Software (Arduino library, examples) is licensed under **MIT**.
+
+See [LICENSE](https://github.com/jeskodevv/motrix/blob/main/LICENSE) for full terms.
+
+---
+
+Made with ❤ and [Hack](https://hackclub.com) by [@jeskodevv](https://github.com/jeskodevv)
