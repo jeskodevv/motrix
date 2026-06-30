@@ -3,3 +3,6 @@ motorPower KEYWORD2
 motorSteer KEYWORD2
 motorTank KEYWORD2
 debug KEYWORD2
+enable KEYWORD2
+stop KEYWORD2
+break KEYWORD2

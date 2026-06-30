@@ -1,61 +1,96 @@
 #include "Arduino.h"
 #include "motrix.h"
+#include "Servo.h"
+#include "SoftwareSerial.h"
+#include "NewPing.h"
 
-void motrix::motorPower(char unit, int power){
-\t_U = unit;
-\t_P = power;
-\tif(_U == 'A'){
-\t\tif(_P>0 && _P<=255){
-\t\t\tanalogWrite(5, abs(_P));
-\t\t\tdigitalWrite(3, 1);
-\t\t}else if(_P<0 && _P>=-255){
-\t\t\tanalogWrite(5, abs(_P));
-\t\t\tdigitalWrite(4, 1);
-\t\t}else{
-\t\t\tanalogWrite(5, 0);
-\t\t\tdigitalWrite(4, 0);
-\t\t\tdigitalWrite(3, 0);
-\t\t}
-\t}else if(_U == 'B'){
-\t\tif(_P>0 && _P<=255){
-\t\t\tanalogWrite(6, abs(_P));
-\t\t\tdigitalWrite(8, 1);
-\t\t}else if(_P<0 && _P>=-255){
-\t\t\tanalogWrite(6, abs(_P));
-\t\t\tdigitalWrite(7, 1);
-\t\t}else{
-\t\t\tanalogWrite(6, 0);
-\t\t\tdigitalWrite(7, 0);
-\t\t\tdigitalWrite(8, 0);
-\t\t}
-\t}
+#define ECHO1 2
+#define ECHO2 3
+#define ECHO3 4
+#define S1 5
+#define S2 6
+#define BIN1 7
+#define BIN2 8
+#define PWMB 9
+#define PWMA 10
+#define AIN2 11
+#define AIN1 12
+#define LDEBUG 13
+#define TRIG A0
+#define L1 A4
+#define L2 A5
+#define L3 A6
+#define STBY A7
+
+void begin(){
+    
+};
+
+void enable(){
+
 }
 
-void motrix::motorSteer(int steering, int power){
-\t_S = steering;
-\t_P = power;
-\tif(_S >= 255){
-\tmotrix::motorPower('A', _P);
-\tmotrix::motorPower('B', _P*-1);
-\t}else if(_S <= -255){
-\tmotrix::motorPower('A', _P*-1);
-\tmotrix::motorPower('B', _P);
-\t}else{
-\tmotrix::motorPower('A', _P*(255+_S)/255);
-\tmotrix::motorPower('B', _P*(255-_S)/255);
-\t}
+void brake(){
+
 }
 
-void motrix::motorTank(int power_a, int power_b){
-\t_PA = power_a;
-\t_PB = power_b;
-\tmotrix::motorPower('A', _PA);
-\tmotrix::motorPower('B', _PB);
+void motorPower(char unit, int power){
+    if(unit == 'A'){
+        if(power>0 && power<=255){
+            analogWrite(PWMA, abs(power));
+            digitalWrite(AIN1, 1);
+            digitalWrite(AIN2, 0);
+        }else if(power<0 && power>=-255){
+            analogWrite(PWMA, abs(power));
+            digitalWrite(AIN1, 0);
+            digitalWrite(AIN2, 1);
+        }else{
+            analogWrite(PWMA, 0);
+            digitalWrite(AIN1, 0);
+            digitalWrite(AIN2, 0);
+        }
+    }else if(unit == 'B'){
+        if(power>0 && power<=255){
+            analogWrite(PWMB, abs(power));
+            digitalWrite(BIN1, 1);
+            digitalWrite(BIN2, 0);
+        }else if(power<0 && power>=-255){
+            analogWrite(PWMB, abs(power));
+            digitalWrite(BIN1, 0);
+            digitalWrite(BIN2, 1);
+        }else{
+            analogWrite(PWMB, 0);
+            digitalWrite(BIN1, 0);
+            digitalWrite(BIN2, 0);
+        }
+    }
 }
 
-void motrix::debug(int delay){
-\t_D = delay;
-\tdigitalWrite(13, 1);
-\tdelay(_D*1000);
-\tdigitalWrite(13, 0);
+void motorSteer(int steering, int power){
+    if(steering >= 255){
+    motorPower('A', power);
+    motorPower('B', power*-1);
+    }else if(steering <= -255){
+    motorPower('A', power*-1);
+    motorPower('B', power);
+    }else{
+    motorPower('A', power*((255+steering)/255));
+    motorPower('B', power*((255-steering)/255));
+    }
+}
+
+void motorTank(int power_a, int power_b){
+    motorPower('A', power_a);
+    motorPower('B', power_b);
+}
+
+void stop(){
+    motorPower(A, 0);
+    motorPower(B, 0);
+}
+
+void debug(int seconds){
+    digitalWrite(LDEBUG, 1);
+    delay(seconds*1000);
+    digitalWrite(LDEBUG, 0);
 }

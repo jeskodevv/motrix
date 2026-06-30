@@ -39,21 +39,31 @@ For details about the design process or other information, check out the [develo
 **Motrix Nano V2** is a 2-layer PCB designed around the Arduino Nano.
 
 here's the pcb
-<img width="410" height="409" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/pcb-v2.png" />
+<img width="468" height="463" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/pcb-v2.png" />
 
 and here's the schematic
-<img width="805" height="503" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/schem-v2.png" />
+<img width="757" height="500" alt="image" src="https://github.com/jeskodevv/motrix/blob/main/assets/schem-v2.png" />
 
 
 ### Power Specs
 
-Maximum input Motrix can support is 13.5V because its ceiling for TB6612FNG, but i wrote 6-12V in some case. 
+Maximum input Motrix can support is 13.5V because its ceiling for TB6612FNG, so i wrote 6-13.5V to power input
 btw MP1584EN handles up to 20V and turns it into 5V. exceed 12V limit on your own risk!
 
 > **Warning:** 4S Li-ion fully charged = 16.8V, which exceeds TB6612FNG maximum and probably fires it. I personally recommended using only 3S if you are using Li-ion 18650s cuz its 12.6V maximum. 4S is incompatible.
 
 ### BOM
-Bill of Materials available in [BOM.csv](https://github.com/jeskodevv/motrix/blob/main/BOM.csv) too.
+
+| name | purpose | qty. | total (USD) | link | distributor |
+|---|---|---|---|---|---|
+| JLCPCB PCB | circuit board itself | 5 | 6.5 | [jlcpcb.com](https://jlcpcb.com) | JLCPCB |
+| ARDUINO NANO | microcontroller | 1 | I have this one | | |
+| TB6612FNG MODULE | dual-H bridge motor driver module | 5 | 5.75 | [link](https://ali.click/l194g12) | AliExpress |
+| MP1584EN MODULE | 4.5-28V buck convertor module | 5 | 3.5 | [link](https://ali.click/5294g1f) | AliExpress |
+| BUTTONS AND HEADER PINS IN BULK | bulk order all needed various header pins and buttons in one | 1 | 5 | | Local Shop |
+| SHIPPING COSTS | shipping costs of everything combined | 1 | 10 | | |
+
+Bill of Materials also available in [BOM.csv](https://github.com/jeskodevv/motrix/blob/main/BOM.csv) too.
 
 
 ## SOFTWARE OVERVIEW

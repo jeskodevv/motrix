@@ -8,17 +8,17 @@
 #define motrix_h
 
 #include <Arduino.h>
+#include <Servo.h>
+#include <SoftwareSerial.h>
+#include <NewPing.h>
 
-class motrix
-{
-	public:
-		void motorPower(char unit, int power);
-		void motorSteer(int steering, int power);
-		void motorTank(int power_a, int power_b);
-		void debug(int delay);
-	private:
-		char _U; 
-		int _P, _S, _PA, _PB, _D;
-};
+void begin();
+void enable();
+void brake();
+void debug(int seconds);
+void motorPower(char unit, int power);
+void motorSteer(int steering, int power);
+void motorTank(int power_a, int power_b);
+void stop();
 
 #endif

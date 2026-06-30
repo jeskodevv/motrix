@@ -1,36 +1,64 @@
-"
-CERN OPEN HARDWARE LICENSE - VERSION 1.2 - 21 JULY 2015
+MOTRIX LICENSING
+================
 
-This is a human-readable summary of the License. The full text of the License is available at https://ohwr.org/cernohl#CERN-OHL-S-NC-1.2.
+This project uses two licenses depending on the component.
 
-0. Definitions
 
-The term “Design” refers to the design files, both electronic and physical, as described in the Design documentation.
+HARDWARE LICENSE - CERN-OHL-S v2
+---------------------------------
+Applies to: PCB design files, schematics, Gerber files, BOM
 
-1. License Grant
+Copyright (c) 2026 jesko (jeskodevv)
 
-You are free to:
-- Copy, modify, and distribute the Design under the terms of the CERN OHL-S-NC-1.2 License.
+This source describes Open Hardware and is licensed under the CERN-OHL-S v2.
 
-You cannot:
-- Use the Design for commercial purposes.
+You may redistribute and modify this documentation and make products
+described in it, under the terms of the CERN-OHL-S v2.
+Full license text: https://ohwr.org/cern_ohl_s_v2.txt
 
-2. No Warranty
+This documentation is distributed WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTY, INCLUDING OF MERCHANTABILITY, SATISFACTORY QUALITY AND
+FITNESS FOR A PARTICULAR PURPOSE. Please see the CERN-OHL-S v2 for
+applicable conditions.
 
-The Design is provided “as is”, without warranty of any kind. See the License for more details.
+Source location: https://github.com/jeskodevv/motrix
 
-3. Preservation of the Design
+As per CERN-OHL-S v2 section 4, should you produce hardware based
+on this documentation, you must maintain the Source Location visible
+on the hardware itself.
 
-You must include a copy of this License in all copies or substantial portions of the Design. You must disclose any modifications made to the Design together with the Design itself.
 
-4. Applicable Law
+SOFTWARE LICENSE - MIT
+----------------------
+Applies to: Arduino library, example sketches, firmware (src/ folder)
 
-The License shall be governed under the laws in the country where you use the Design. 
+Copyright (c) 2026 jesko (jeskodevv)
 
-5. Choice of Law
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
 
-You must comply with the applicable laws.
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
 
-The full text of the CERN OHL-S-NC-1.2 License can be found at the link below:
-https://ohwr.org/cernohl#CERN-OHL-S-NC-1.2
-"
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS
+BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+SUMMARY
+-------
+PCB, Schematic, Gerbers  ->  CERN-OHL-S v2
+Arduino Library, Examples  ->  MIT
+
+Made with love and Hack by jesko
+https://github.com/jeskodevv/motrix
