@@ -57,10 +57,10 @@ btw MP1584EN handles up to 20V and turns it into 5V. exceed 12V limit on your ow
 | name | purpose | qty. | total (USD) | link | distributor |
 |---|---|---|---|---|---|
 | JLCPCB PCB | circuit board itself | 5 | 6.5 | [jlcpcb.com](https://jlcpcb.com) | JLCPCB |
-| ARDUINO NANO | microcontroller | 1 | I have this one | | |
+| ARDUINO NANO | microcontroller | 1 | I have this one | https://ali.click/65z4j1p | |
 | TB6612FNG MODULE | dual-H bridge motor driver module | 5 | 5.75 | [link](https://ali.click/l194g12) | AliExpress |
 | MP1584EN MODULE | 4.5-28V buck convertor module | 5 | 3.5 | [link](https://ali.click/5294g1f) | AliExpress |
-| BUTTONS AND HEADER PINS IN BULK | bulk order all needed various header pins and buttons in one | 1 | 5 | | Local Shop |
+| BUTTONS AND HEADER PINS IN BULK | bulk order all needed various header pins and buttons in one | 1 | 5 | https://ali.click/9bz4j16, https://ali.click/ocz4j1b, https://ali.click/rdz4j1o | AliExpress |
 | SHIPPING COSTS | shipping costs of everything combined | 1 | 10 | | |
 
 Bill of Materials also available in [BOM.csv](https://github.com/jeskodevv/motrix/blob/main/BOM.csv) too.
